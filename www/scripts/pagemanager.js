@@ -1,4 +1,4 @@
-var app=angular.module('single-page-app',['ngRoute']);
+var app=angular.module('single-page-app',['ngRoute','ui.bootstrap']);
 
 
 app.config(function($routeProvider){
