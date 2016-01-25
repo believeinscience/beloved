@@ -18,8 +18,7 @@ var CDtimers = new function(){
 	},
 	//Takes a number in ms and returns an object describing how long that is in days,hours,seconds, and ms
 	this.mstoTime = function(time){
-		var result={hours:0,minutes:0,seconds:0,milliseconds:0}
-		result.milliseconds = time%SECLENGTH;
+		var result={hours:0,minutes:0,seconds:0}
 		result.hours = Math.floor(time/HRLENGTH);
 		result.minutes = Math.floor((time - (result.hours*HRLENGTH))/MINLENGTH);
 		result.seconds = Math.floor((time - (result.hours*HRLENGTH) - (result.minutes*MINLENGTH))/SECLENGTH);
