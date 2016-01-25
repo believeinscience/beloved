@@ -13,6 +13,9 @@ app.config(function($routeProvider){
           })
 		  .when('/ScammerReg',{
                 templateUrl: 'pages/ScammerReg.html'
+          })
+		  .when('/Countdown',{
+                templateUrl: 'pages/Countdown.html'
           });
 
 
