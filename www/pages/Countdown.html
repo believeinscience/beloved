@@ -2,6 +2,8 @@
    <h1>Countdowns</h1>
 	<p> Below are the times until certain daily events happen in the game.</p>
 	<div ng-controller="CountdownCtrl">
-	
+		<p ng-repeat="ev in igevents">
+			{{ev.Name}}: {{ev.countdown.hours}}:{{ev.countdown.minutes}}:{{ev.countdown.seconds}} 
+		</p>
 	</div>
 </div>
