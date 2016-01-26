@@ -1,9 +1,8 @@
 var app=angular.module('single-page-app',['ngRoute','ui.bootstrap']);
 
-
-app.config(function($routeProvider){
-
-
+//When using $ variables from angular, take parameter ex: function($scope){} and format like ["$scope",function($scope){}] 
+//Allows for minifying our angular code.
+app.config(["$routeProvider",function($routeProvider){
       $routeProvider
           .when('/',{
                 templateUrl: 'pages/home.html'
@@ -19,10 +18,10 @@ app.config(function($routeProvider){
           });
 
 
-});
+}]);
 
 
-app.controller('cfgController',function($scope){
+app.controller('cfgController',["$scope",function($scope){
 
 
-});
+}]);
