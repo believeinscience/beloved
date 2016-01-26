@@ -28,7 +28,7 @@ $scope.getdata = function() {$scope.ds.fetch({
 		$scope.retrieveddata.push(this.rowByPosition(i)); 
 
 	//add data to drop down
-	$scope.$apply(function(){  $scope.searchcriteria.values = $scope.ds.columnNames();});8
+	//$scope.$apply(function(){  $scope.searchcriteria.values = $scope.ds.columnNames();});
 	
 	console.log("data loaded");
 	$scope.loaded_data = true;
@@ -37,7 +37,7 @@ $scope.getdata = function() {$scope.ds.fetch({
 	console.log("enabling search bar");
 	$("#searchbar").attr("disabled",false);
 	$("#searchbar").attr("placeholder","Enter search here");
-	$("#searchcriteria").attr("disabled",false);
+	//$("#searchcriteria").attr("disabled",false);
   }
 });
 };
