@@ -1,9 +1,12 @@
  <div class="Page">
    <h1>Countdowns</h1>
-	<p> Below are the times until certain daily events happen in the game.</p>
+	<p> Below are the times until certain daily events happen in the game. Countdown timers automatically update.</p>
 	<div ng-controller="CountdownCtrl">
-		<p ng-repeat="ev in igevents | orderBy:'countdown.hours'">
-			{{ev.Name}}: {{ev.countdown.hours}}:{{ev.countdown.minutes}}:{{ev.countdown.seconds}}
-		</p>
+	
+		<div class="well well-sm" ng-repeat="ev in igevents | orderBy:'countdown.hours'">
+			{{ev.Name}}: {{ev.countdown.hours}}h {{ev.countdown.minutes}}m 
+			<span ng-if="ev.countdown.hours<1">{{ev.countdown.seconds}}s</span>
+			
+		</div>
 	</div>
 </div>
