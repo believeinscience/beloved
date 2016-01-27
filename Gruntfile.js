@@ -28,7 +28,8 @@ minifyHtml:{
 	release:{
 		files:[
 			{src:"temp/index.html",dest:"build/index.html"},
-			{src:"www/ScammerRegistry/index.html",dest:"build/ScammerRegistry/index.html"}
+			{src:"www/ScammerRegistry/index.html",dest:"build/ScammerRegistry/index.html"},
+			{expand: true,cwd: 'www/pages',src:['*'],dest:'build/pages/'}
 		]
 
 	}
@@ -48,7 +49,11 @@ includereplace: {
     options: {
       globals: {
         mainscripts: "<script src='scripts/scripts.js'></script>",
+		commentstart: "<!--",
+		commentend: "-->"
       },
+      prefix: '<!-- @@',
+      suffix: ' -->'
     },
 	files:[
 		{src: 'www/index.html',dest: 'temp/index.html'}
@@ -59,8 +64,7 @@ copy: {
 	release: {
 			files: [
 				{ src: 'www/favicon.png', dest: 'build/favicon.png' },
-				{src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js', dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'},
-				{expand: true, cwd:'www/pages/',src:['**'],dest:'build/pages/'}
+				{src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js', dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'}
 			]
 		}
     }
