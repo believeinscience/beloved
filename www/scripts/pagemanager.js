@@ -20,8 +20,9 @@ app.config(["$routeProvider",function($routeProvider){
 
 }]);
 
-
-app.controller('cfgController',["$scope",function($scope){
-
+app.controller('cfgController',["$rootScope",function($rootScope){
+	$rootScope.$on('$routeChangeSuccess', function(){
+        spriteAnimation.randomHappyface();
+      });
 
 }]);

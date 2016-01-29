@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="favicon.png" />
   <title>Beloved</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body ng-app="single-page-app">
+  	<!-- Character animation that floats at the bottom of the page -->
+  <div id="CharacterAvatar" onclick="spriteAnimation.randomSadface()"></div>
   <div ng-controller="cfgController">
   <div>
   <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
@@ -24,6 +26,10 @@
   <div ng-view class="container"></div>
   </div>
   <!-- script loading -->
+  	<!-- jquery for the animation plugin spritey -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.8/jquery.spritely.min.js"></script>
+	
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.min.js"></script>
@@ -31,9 +37,11 @@
   <!-- Grunt inserts release script here and removes the dev scripts -->
   <!-- @@mainscripts -->
   <!-- @@commentstart -->
+	<script src="scripts/spriteAnimation.js"></script>
 	<script src="scripts/countdowns.js"></script>
 	<script src="scripts/pagemanager.js"></script>
 	<script src="scripts/CountdownCtrl.js"></script>
+
   <!-- @@commentend -->
 </body>
 </html>

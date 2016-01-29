@@ -1,4 +1,14 @@
 .Page{
 	/*padding-left:130px;
 	padding-right:200px;*/
-};
+}
+
+#CharacterAvatar{
+	background: transparent url('../img/avatar.png');
+	width:61px;
+	height:86px;
+	cursor:pointer;
+	bottom:30px;
+	right:30px;
+	position:absolute;
+}
