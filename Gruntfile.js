@@ -17,7 +17,7 @@ uglify: {
 concat: {
   release: {
 	files:[
-		{src: ['www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js'], dest: 'temp/scripts/scripts.js'}
+		{src: ['www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js'], dest: 'temp/scripts/scripts.js'}
 	]
   }
 },
@@ -64,7 +64,8 @@ copy: {
 	release: {
 			files: [
 				{ src: 'www/favicon.png', dest: 'build/favicon.png' },
-				{src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js', dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'}
+				{src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js', dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'},
+				{src: 'www/img/avatar.png', dest: 'build/img/avatar.png'}
 			]
 		}
     }
