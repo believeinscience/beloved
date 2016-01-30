@@ -9,15 +9,14 @@ uglify: {
   },
   release: {
 	files:[
-		{src: 'temp/scripts/scripts.js', dest: 'build/scripts/scripts.js'},
-		{src: 'www/ScammerRegistry/scripts/Controller.js', dest: 'build/ScammerRegistry/scripts/Controller.js'}
+		{src: 'temp/scripts/scripts.js', dest: 'build/scripts/scripts.js'}
 	]
   }
 },
 concat: {
   release: {
 	files:[
-		{src: ['www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js'], dest: 'temp/scripts/scripts.js'}
+		{src: ['www/library/underscore.deferred.js','www/library/underscore.math.js','www/library/miso.events.js','www/library/miso.ds.0.4.1.js','www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js','www/scripts/scammerController.js'], dest: 'temp/scripts/scripts.js'}
 	]
   }
 },
@@ -28,7 +27,6 @@ minifyHtml:{
 	release:{
 		files:[
 			{src:"temp/index.html",dest:"build/index.html"},
-			{src:"www/ScammerRegistry/index.html",dest:"build/ScammerRegistry/index.html"},
 			{expand: true,cwd: 'www/pages',src:['*'],dest:'build/pages/'}
 		]
 
@@ -39,8 +37,7 @@ cssmin:{
 	},
 	release:{
 		files:[
-			{src:"www/css/style.css",dest:"build/css/style.css"},
-			{src:"www/ScammerRegistry/css/style.css",dest:"build/ScammerRegistry/css/style.css"}
+			{src:"www/css/style.css",dest:"build/css/style.css"}
 		]
 		}
 },
