@@ -13,17 +13,11 @@
 	<div class="container-fluid">
 		<br>
 		<br>
-		<div ng-if="searchtext.length != 0 && results.length != 0">
+		<div ng-show="searchtext.length != 0">
 			 <strong>{{results.length}} result(s) found.</strong>
 		</div>
-		<div ng-if="results.length==0 && searchtext.length != 0">
-			 <strong>No results found.</strong>
-		</div>
-		<div ng-if="searchtext.length == 0">
-			 <strong>Search.</strong>
-		</div>
 		<br>
-		<div ng-repeat="row in retrieveddata | filter:searchtext as results" ng-hide = "searchtext.length == 0">
+		<div ng-repeat="row in retrieveddata | filter:searchtext as results">
 			<div ng-hide = "row['ScammerIGNs'] == null"><strong>IGN(s):</strong> {{row['ScammerIGNs']}}<br></div>
 			<div ng-hide = "row['Names'] == null"><strong>Name(s):</strong> {{row['Names']}}<br></div>
 			<div ng-hide = "row['ScammerFarmNames'] == null"><strong>Farm Names(s):</strong> {{row['ScammerFarmNames']}}<br></div>
