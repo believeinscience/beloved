@@ -80,10 +80,23 @@ copy: {
 				{src: 'www/img/avatar.png', dest: 'build/img/avatar.png'}
 			]
 		}
-    }
+    },
+jshint:{
+	options:{
+		globals:{
+			jQuery: true
+		}
+	},
+	release:{
+		files:{
+			src: ['www/scripts/*.js']
+		}
+	}
+}
 });
 
 // Load the plugin that provides the "uglify" task.
+grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-minify-html');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -91,5 +104,5 @@ grunt.loadNpmTasks('grunt-include-replace');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-concat');
 // Default task(s).
-grunt.registerTask('release', ['minifyHtml:pageminify','concat','includereplace','uglify','minifyHtml:mainindex','cssmin','copy']);
+grunt.registerTask('release', ['jshint:release','minifyHtml:pageminify','concat','includereplace','uglify','minifyHtml:mainindex','cssmin','copy']);
 };

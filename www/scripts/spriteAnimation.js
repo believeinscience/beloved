@@ -1,11 +1,12 @@
-var spriteAnimation = new function(){
+var spriteAnimation = (function(){
+	var instance = {};
 	//starts the animation.
 	$('#CharacterAvatar').sprite({fps: 16, no_of_frames: 16}).active();
 	var activeExpression = false;
 	
 	//do an expression specified for 3 seconds, and switch back to default expression (1st spState)
 	//n is a number between 1 and 7 inclusive
-	this.doExpression = function(n){
+	instance.doExpression = function(n){
 		if(activeExpression)
 			return;
 		activeExpression=true;
@@ -17,12 +18,12 @@ var spriteAnimation = new function(){
 		},3000);	
 	};
 	
-	this.randomHappyface = function(){
-		this.doExpression(Math.floor((Math.random() * 2) + 6));
+	instance.randomHappyface = function(){
+		instance.doExpression(Math.floor((Math.random() * 2) + 6));
 	};
 	
-	this.randomSadface = function(){
-		this.doExpression(Math.floor((Math.random() * 2) + 4));
+	instance.randomSadface = function(){
+		instance.doExpression(Math.floor((Math.random() * 2) + 4));
 	};
 	
 	//do blinking every 5 seconds.
@@ -37,4 +38,5 @@ var spriteAnimation = new function(){
 			$('#CharacterAvatar').spState(1);
 		},1000);
 	},5000);
-};
+	return instance;
+})();

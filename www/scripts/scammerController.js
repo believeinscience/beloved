@@ -17,13 +17,13 @@ $scope.ds = new Miso.Dataset({
   worksheet : "1"
 });
 
-$scope.retrieveddata = []
+$scope.retrieveddata = [];
 
 $scope.getdata = function() {$scope.ds.fetch({ 
   success : function() {
   
 	//put data into easy to read format from miso
-	var data = []
+	var data = [];
 	for (var i=0;i<this.length; i++)
 		data.push(this.rowByPosition(i)); 
 	$scope.$apply(function(){$scope.retrieveddata = data;});
@@ -43,7 +43,7 @@ $scope.getdata = function() {$scope.ds.fetch({
 };
 
 $scope.search = function(value){
-	if(value[$scope.searchcriteria.value]==null)
+	if(value[$scope.searchcriteria.value]===null)
 		return false;
 	if($scope.searchcriteria.value == "Search All"){
 		
