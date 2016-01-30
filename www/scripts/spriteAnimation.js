@@ -1,6 +1,10 @@
 var spriteAnimation = new function(){
+	//starts the animation.
 	$('#CharacterAvatar').sprite({fps: 16, no_of_frames: 16}).active();
 	var activeExpression = false;
+	
+	//do an expression specified for 3 seconds, and switch back to default expression (1st spState)
+	//n is a number between 1 and 7 inclusive
 	this.doExpression = function(n){
 		if(activeExpression)
 			return;
@@ -21,7 +25,7 @@ var spriteAnimation = new function(){
 		this.doExpression(Math.floor((Math.random() * 2) + 4));
 	};
 	
-	//do blinking intervals every 5 seconds.
+	//do blinking every 5 seconds.
 	setInterval(function(){
 		if(activeExpression)
 			return;
