@@ -1,6 +1,5 @@
-.Page{
-	/*padding-left:130px;
-	padding-right:200px;*/
+.navbar{
+	padding-left:130px;
 }
 
 #CharacterAvatar{
@@ -8,8 +7,8 @@
 	width:61px;
 	height:86px;
 	cursor:pointer;
-	top:5px;
-	left:5px;
+	top:60px;
+	left:15px;
 	float:left;
-	position:relative;
+	position:absolute;
 }

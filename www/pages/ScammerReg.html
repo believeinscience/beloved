@@ -1,17 +1,15 @@
-<div class="page" ng-controller="ScamRegController">
-	<div class="container">
+<div ng-controller="ScamRegController">
+	<div class="container-fluid">
 		<h1>Beloved Scammer Registry</h1>
 		<p>The Scammer Registry is Beloved's record of known Scammers and bad vouchers. It should be noted that not everyone on this list has been confirmed to be a scammer and that the names come from various sources.</p>
-		<div class="col-xs-12">
 			<input type="text" id="searchbar" class="form-control" placeholder="Loading Data..." disabled ng-model="searchtext">
-		</div>
 		<!--
 		<div class="col-xs-3">
 			<select class="form-control" id="searchcriteria" disabled ng-model="searchcriteria.value" ng-options = "v for v in searchcriteria.values">
 		</select>
 		</div> -->
 	</div>
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 		<br>
 		<div ng-if="searchtext.length != 0 && results.length != 0">
