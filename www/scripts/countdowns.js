@@ -16,7 +16,16 @@ var CDtimers = (function(){
 			difference = 24*60*60*1000 + difference;
 		return difference;
 	};
-	//Takes a number in ms and returns an object describing how long that is in days,hours,seconds, and ms
+	//returns time Date object set at particular UTC hour and minute.
+	//used for coverting UTC universal time to a local time.
+	instance.localTime = function(hour,minute){
+		var timeB = new Date();
+		timeB.setUTCHours(hour);
+		timeB.setUTCMinutes(minute);
+		timeB.setUTCSeconds(0);
+		return timeB;
+	};
+	//Takes a number in ms and returns an object describing how long that is in days,hours,seconds
 	instance.mstoTime = function(time){
 		var result={hours:0,minutes:0,seconds:0};
 		result.hours = Math.floor(time/HRLENGTH);

@@ -5,6 +5,7 @@
 	<div ng-controller="CountdownCtrl">
 	
 		<div class="well well-sm" ng-repeat="ev in igevents | orderBy:'countdown.hours'">
+			{{ev.time.format('h')}}<span ng-if="ev.time.format('m')!='0'">:{{ev.time.format('m')}}</span>{{ev.time.format('a')}}
 			{{ev.Name}}: {{ev.countdown.hours}}h {{ev.countdown.minutes}}m 
 			<span ng-if="ev.countdown.hours<1">{{ev.countdown.seconds}}s</span>
 			
