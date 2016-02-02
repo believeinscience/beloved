@@ -17,16 +17,17 @@
 			 <strong>{{results.length}} result(s) found.</strong>
 		</div>
 		<br>
-		<div ng-repeat="row in retrieveddata | filter:searchtext as results">
-			<div ng-hide = "row['ScammerIGNs'] == null"><strong>IGN(s):</strong> {{row['ScammerIGNs']}}<br></div>
-			<div ng-hide = "row['Names'] == null"><strong>Name(s):</strong> {{row['Names']}}<br></div>
-			<div ng-hide = "row['ScammerFarmNames'] == null"><strong>Farm Names(s):</strong> {{row['ScammerFarmNames']}}<br></div>
-			<div ng-hide = "row['Victims'] == null"><strong>Victim(s):</strong> {{row['Victims']}}<br></div>
-			<div ng-hide = "row['Date'] == null"><strong>Date:</strong> {{row['Date']}}<br></div>
-			<div ng-hide = "row['ScammerWorlds'] == null"><strong>World:</strong> {{row['ScammerWorlds']}}<br></div>
-			<div ng-hide = "row['IncidentReportSummary'] == null"><strong>Incident Description:</strong> {{row['IncidentReportSummary']}}<br></div>
-			<div ng-hide = "row['ReportedBy'] == null"><strong>Entry added by:</strong> {{row['ReportedBy']}}<br></div>
-			<div ng-hide = "row['Notes'] == null"><strong>Note:</strong> {{row['Notes']}}<br></div>
+		<div ng-repeat="row in retrieveddata | filter:searchtext | orderBy:'-Date' as results">
+			<div ng-hide = "row['ScammerIGNs'] === null"><strong>IGN(s):</strong> {{row['ScammerIGNs']}}<br></div>
+			<div ng-hide = "row['Names'] === null"><strong>Name(s):</strong> {{row['Names']}}<br></div>
+			<div ng-hide = "row['ScammerFarmNames'] === null"><strong>Farm Names(s):</strong> {{row['ScammerFarmNames']}}<br></div>
+			<div ng-hide = "row['Victims'] === null"><strong>Victim(s):</strong> {{row['Victims']}}<br></div>
+			<!-- Hack to make it arrange correctly. See scammerController.js -->
+			<div ng-hide = "row['Date'].format('YYYY') == '1000'"><strong>Date:</strong> {{row['Date'].format('M/D/YYYY')}}<br></div>
+			<div ng-hide = "row['ScammerWorlds'] === null"><strong>World:</strong> {{row['ScammerWorlds']}}<br></div>
+			<div ng-hide = "row['IncidentReportSummary'] === null"><strong>Incident Description:</strong> {{row['IncidentReportSummary']}}<br></div>
+			<div ng-hide = "row['ReportedBy'] === null"><strong>Entry added by:</strong> {{row['ReportedBy']}}<br></div>
+			<div ng-hide = "row['Notes'] === null"><strong>Note:</strong> {{row['Notes']}}<br></div>
 			<hr>
 		</div>
 	</div>
