@@ -1,8 +1,18 @@
 #memberbg{
-	background-color: black;
 	background: center no-repeat url('../img/memberbg_cr.png');
 	height: 988px;
 	min-width: 1258px;
 	width: auto !important;
 	overflow: visible;
+}
+
+#memkankati{
+	background: transparent url('../img/avatar.png');
+	width:61px;
+	height:86px;
+	cursor:pointer;
+	float:left;
+	position:relative;
+	top:450px;
+	left:400px;
 }

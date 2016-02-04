@@ -44,7 +44,6 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 			doExpression(randchosen,duration);
 			return;
 		};
-		console.log(list);
 		var choice = list[Math.floor(Math.random()*list.length)];
 		if (choice>numstates || choice<0)
 			choice = defaultExpression;
@@ -97,7 +96,7 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 
 
 
-var speed= 16;
+/*var speed= 16;
 
 var a = new spriteAnima('#a',speed,16,7);
 a.settimebetween(1000);
@@ -108,14 +107,14 @@ var b = new spriteAnima('#b',speed,16,7);
 var c = new spriteAnima('#c',speed,16,7);
 var d = new spriteAnima('#d',speed,16,7);
 setTimeout(function(){
-	/*$('#a').destroy();
+	$('#a').destroy();
 	$('#b').destroy();
 	$('#c').destroy();
-	$('#d').destroy();*/
+	$('#d').destroy();
 	console.log('stopping');
 	a.stopinter();
 	a.startinter();
 },5000);
 setTimeout(function(){
 	a.destroy();
-},10000);
+},10000);*/
