@@ -15,6 +15,9 @@ app.config(["$routeProvider",function($routeProvider){
           })
 		  .when('/Countdown',{
                 templateUrl: 'pages/Countdown.html'
+          })
+		  .when('/members',{
+                templateUrl: 'pages/members.html'
           });
 
 
