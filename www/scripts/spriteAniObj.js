@@ -12,6 +12,12 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	var activeExpression = false;
 	var defaultExpression = 1;
 	//interval parameters
+	
+	//determines if states done by interval can be interupted by outside source, such as a state change from a click.
+	//false means it is, true means that they can't be interrupted.
+	var intervalpriority = false;
+	//says if an interval is currently doing an expression.
+	var intervaldoingexpr = false;
 	var exprtime = 1000;
 	var timebetween = 5000;
 	var spriteinterval = null;
@@ -24,13 +30,17 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 
 	//do an expression specified for time specified, and switch back to default expression
 	var doExpression = function(n,duration){
-		if(activeExpression)
-			return;
+		//had to make a truth table to work this one out
+		if(intervalpriority && activeExpression)
+				return;
+		else if(activeExpression && !intervaldoingexpr)
+				return;
 		activeExpression=true;
 		sprite.spState(n);
 		//reset state to normal after n seconds and allow for another expression.
 		setTimeout(function(){
 			activeExpression=false;
+			intervaldoingexpr=false;
 			sprite.spState(defaultExpression);
 		},duration);	
 	};
@@ -56,6 +66,7 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 		spriteinterval = setInterval(function(){
 		if(activeExpression)
 			return;
+		intervaldoingexpr=true;
 		doRandomExpression(randexpressions,exprtime);
 		},timebetween);
 	};
@@ -81,40 +92,18 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	this.doRandomExpression = function(list,duration){
 		doRandomExpression(list,duration);
 	};
-
+	
+	this.setintervalpriority = function(input){
+		intervalpriority = input;
+	}
 	this.settimebetween = function(input){
 		timebetween = input;
 	};
 	this.setexprtime = function(input){
-		timebetween = input;
+		exprtime = input;
 	};
 	this.setrandexpr = function(input){
 		randexpressions = input;
 	};
 	
 };
-
-
-
-/*var speed= 16;
-
-var a = new spriteAnima('#a',speed,16,7);
-a.settimebetween(1000);
-a.setexprtime(500);
-a.setrandexpr([4,5,6,7]);
-a.startinter();
-var b = new spriteAnima('#b',speed,16,7);
-var c = new spriteAnima('#c',speed,16,7);
-var d = new spriteAnima('#d',speed,16,7);
-setTimeout(function(){
-	$('#a').destroy();
-	$('#b').destroy();
-	$('#c').destroy();
-	$('#d').destroy();
-	console.log('stopping');
-	a.stopinter();
-	a.startinter();
-},5000);
-setTimeout(function(){
-	a.destroy();
-},10000);*/
