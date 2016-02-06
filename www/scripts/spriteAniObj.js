@@ -9,19 +9,16 @@ this is dependent upon spritely plugin for jquery.
 var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	//sprite can't be a property, setTimeouts can't access
 	var sprite = $(domid);
+	//when an outside source(click) is doing a reaction)
 	var activeExpression = false;
 	var defaultExpression = 1;
 	//interval parameters
-	
-	//determines if states done by interval can be interupted by outside source, such as a state change from a click.
-	//false means it is, true means that they can't be interrupted.
-	var intervalpriority = false;
-	//says if an interval is currently doing an expression.
-	var intervaldoingexpr = false;
-	var exprtime = 1000;
 	var timebetween = 5000;
 	var spriteinterval = null;
-	var randexpressions = [];
+	
+	//random interval expressions
+	//all expressions are objects with the properties with state,weight,length to ensure flexibility
+	var randintervalexpressions = [];
 	
 	
 	//starts the animation.
@@ -29,35 +26,66 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	
 
 	//do an expression specified for time specified, and switch back to default expression
-	var doExpression = function(n,duration){
-		//had to make a truth table to work this one out
-		if(intervalpriority && activeExpression)
-				return;
-		else if(activeExpression && !intervaldoingexpr)
-				return;
-		activeExpression=true;
+	//priority indicates if it will do expression if there is already an expression being performed.
+	//if true, it will override if the current expresion isn't high priority
+	//if false, it will not.
+	var doExpression = function(n,duration,priority){
+				console.log('doExpr');
+			console.log(priority);
+		if(activeExpression)
+			return;
 		sprite.spState(n);
+		if(priority)
+			activeExpression=true;
 		//reset state to normal after n seconds and allow for another expression.
 		setTimeout(function(){
-			activeExpression=false;
-			intervaldoingexpr=false;
-			sprite.spState(defaultExpression);
+			console.log('timeout');
+			console.log(priority);
+			if(priority || !activeExpression)
+				sprite.spState(defaultExpression);
+			if(priority)
+				activeExpression=false;
 		},duration);	
 	};
 
 	//does a random state based on a array of integers.
-	//if empty list is given, then a random one is picked.
+	//if empty list is given, nothing happens.
 	//these are not properties since the interval can't access them.
-	var doRandomExpression = function(list,duration){
-		if(list.length==0){
-			var randchosen = Math.floor(Math.random()*numstates) + 1;
-			doExpression(randchosen,duration);
+	
+	//quick TEST of randomness
+	pickedstates={};
+	pickedstateincrements=0;
+	
+	//returns random index from array of objects based on  weight property of objects.
+	var chooserandomweightedindex = function(list){
+		var weightsum=0;
+		for(var i=0;i<list.length;i++)
+			weightsum+=list[i].weight;
+		//get random
+		var weightchoice = Math.floor(Math.random()*weightsum) + 1;
+		var indexchoice = 0;
+		//find the index with the corresponding weight
+		for(i=0;i<list.length;i++){
+			weightchoice = weightchoice - list[i].weight
+			if(weightchoice<=0){
+				indexchoice = i;
+				break;
+			}
+			if(i==list.length-1)
+				indexchoice = i;
+		}
+		return indexchoice;
+	};
+	
+	this.chooserandomweightedindex = function(list){
+		return chooserandomweightedindex(list);
+	};
+	
+	var doRandomExpression = function(list,priority){
+		if(list.length==0)
 			return;
-		};
-		var choice = list[Math.floor(Math.random()*list.length)];
-		if (choice>numstates || choice<0)
-			choice = defaultExpression;
-		doExpression(choice,duration);
+		var index = chooserandomweightedindex(list);
+		doExpression(list[index].state,list[index].length,priority);
 	};
 
 	this.startinter = function(){
@@ -66,8 +94,7 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 		spriteinterval = setInterval(function(){
 		if(activeExpression)
 			return;
-		intervaldoingexpr=true;
-		doRandomExpression(randexpressions,exprtime);
+		doRandomExpression(randintervalexpressions,false);
 		},timebetween);
 	};
 
@@ -85,25 +112,21 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 		this.stopinter();
 	};
 
-	this.doExpression = function(n,duration){
-		doExpression(n,duration);
+	this.doExpression = function(n,duration,priority){
+		doExpression(n,duration,priority);
 	};
 
-	this.doRandomExpression = function(list,duration){
-		doRandomExpression(list,duration);
+	this.doRandomExpression = function(list,priority){
+		doRandomExpression(list,priority);
 	};
 	
-	this.setintervalpriority = function(input){
-		intervalpriority = input;
-	}
+
 	this.settimebetween = function(input){
 		timebetween = input;
 	};
-	this.setexprtime = function(input){
-		exprtime = input;
-	};
+
 	this.setrandexpr = function(input){
-		randexpressions = input;
+		randintervalexpressions = input;
 	};
 	
 };
