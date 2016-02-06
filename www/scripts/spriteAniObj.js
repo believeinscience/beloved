@@ -30,8 +30,6 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	//if true, it will override if the current expresion isn't high priority
 	//if false, it will not.
 	var doExpression = function(n,duration,priority){
-				console.log('doExpr');
-			console.log(priority);
 		if(activeExpression)
 			return;
 		sprite.spState(n);
@@ -39,8 +37,6 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 			activeExpression=true;
 		//reset state to normal after n seconds and allow for another expression.
 		setTimeout(function(){
-			console.log('timeout');
-			console.log(priority);
 			if(priority || !activeExpression)
 				sprite.spState(defaultExpression);
 			if(priority)
