@@ -74,6 +74,30 @@
 	width:31px;
 }
 
+/*Bamboo*/
+.namelbl_58{
+	opacity:1;
+}
+.namelbl_58_left{
+	background: url('../img/lbl/lr58_l.png');
+	top:0px;
+	height:20px;
+	width:12px;
+}
+.namelbl_58_mid{
+	background: url('../img/lbl/lr58_m.png');
+	top:0px;
+	height:20px;
+	line-height:20px;
+	color:black;
+}
+.namelbl_58_right{
+	background: url('../img/lbl/lr58_r.png');
+	top:0px;
+	height:20px;
+	width:12px;
+}
+
 /*AppleRing*/
 .namelbl_43{
 	opacity:0.8;
