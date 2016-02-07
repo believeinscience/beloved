@@ -31,7 +31,8 @@ $scope.executed=false;
 
 $scope.$on("$destroy", function(){
 	for(var i=0;i<$scope.players.length;i++)
-		$scope.players[i].animation.destroy();
+		if('animation' in $scope.players[i])
+			$scope.players[i].animation.destroy();
 });
 
 }]).directive('guildmember', function(){
