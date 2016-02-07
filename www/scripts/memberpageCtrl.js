@@ -1,9 +1,4 @@
 app.controller("memberPageController",['$scope','$timeout',function($scope,$timeout){
-/*var memkan = new spriteAnima('#memkankati',16,16,7);
-memkan.settimebetween(5000);
-memkan.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
-memkan.startinter();
-$scope.memkankaticlick = function(){memkan.doRandomExpression([{state:6,weight:1,length:3000},{state:7,weight:1,length:3000}],true)};*/
 $scope.players=[
 {ign:"Kankati",
 medal:{type:"717",text:"Supreme Leader"},
@@ -38,7 +33,7 @@ $scope.$on("$destroy", function(){
 }]).directive('guildmember', function(){
 	return{
 		link:function(scope,element,attrs){
-			console.log(scope.player.ign);
+			//console.log(scope.player.ign);
 		},
 		restrict:'E',
 		scope:{
@@ -60,7 +55,7 @@ $scope.$on("$destroy", function(){
                     // Finally, directives are evaluated
                     // and templates are renderer here
 					if($scope.$last){
-					console.log("starting animations");
+					//console.log("starting animations");
 					//configure and start animations
 					$scope.players[0].animation = new spriteAnima('#avatar_'+$scope.players[0].ign,$scope.players[0].animationinfo.fps,$scope.players[0].animationinfo.frames,$scope.players[0].animationinfo.states);
 					$scope.players[0].animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
