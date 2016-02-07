@@ -16,7 +16,8 @@ uglify: {
 concat: {
   release: {
 	files:[
-		{src: ['www/library/underscore.deferred.js','www/library/underscore.math.js','www/library/miso.events.js','www/library/miso.ds.0.4.1.js','www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js','www/scripts/scammerController.js'], dest: 'temp/scripts/scripts.js'}
+		{src: ['www/library/underscore.deferred.js','www/library/underscore.math.js','www/library/miso.events.js','www/library/miso.ds.0.4.1.js','www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js','www/scripts/scammerController.js','www/scripts/spriteAniObj.js','www/scripts/memberpageCtrl.js'], dest: 'temp/scripts/scripts.js'},
+		{src:['www/css/style.css','www/css/member.css'], dest:'temp/css/styles.css'}
 	]
   },
   test:{
@@ -26,7 +27,7 @@ concat: {
 		}
 	},
 	files:[
-		{src:['temp/pages/about.html','temp/pages/Countdown.html','temp/pages/home.html','temp/pages/ScammerReg.html'],dest:"temp/pages/concatted.html"}
+		{src:['temp/pages/about.html','temp/pages/Countdown.html','temp/pages/home.html','temp/pages/ScammerReg.html','temp/pages/members.html'],dest:"temp/pages/concatted.html"}
 	]
   }
 },
@@ -50,7 +51,7 @@ cssmin:{
 	},
 	release:{
 		files:[
-			{src:"www/css/style.css",dest:"build/css/style.css"}
+			{src:"temp/css/styles.css",dest:"build/css/style.css"}
 		]
 		}
 },
@@ -77,7 +78,8 @@ copy: {
 			files: [
 				{ src: 'www/favicon.png', dest: 'build/favicon.png' },
 				{src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js', dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'},
-				{src: 'www/img/avatar.png', dest: 'build/img/avatar.png'}
+				{expand:true, cwd:'www/',src: 'img/**', dest: 'build/'},
+				{src: 'www/player/playerdirective.html', dest:'build/player/playerdirective.html'}
 			]
 		}
     },
@@ -92,7 +94,17 @@ jshint:{
 			src: ['www/scripts/*.js']
 		}
 	}
-}
+},
+imageEmbed: {
+    dist: {
+      src: "build/css/style.css",
+      dest: "build/css/style.css",
+      options: {
+        deleteAfterEncoding : true,
+        preEncodeCallback: function (filename) { return true; }
+      }
+    }
+  }
 });
 
 // Load the plugin that provides the "uglify" task.
@@ -103,6 +115,7 @@ grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-include-replace');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks("grunt-image-embed");
 // Default task(s).
-grunt.registerTask('release', ['jshint:release','minifyHtml:pageminify','concat','includereplace','uglify','minifyHtml:mainindex','cssmin','copy']);
+grunt.registerTask('release', ['jshint:release','minifyHtml:pageminify','concat','includereplace','uglify','minifyHtml:mainindex','cssmin','copy','imageEmbed']);
 };

@@ -55,20 +55,20 @@
 	opacity:1;
 }
 .namelbl_59_left{
-	background: url('../img/lr59_l.png');
+	background: url('../img/lbl/lr59_l.png');
 	top:0px;
 	height:25px;
 	width:28px;
 }
 .namelbl_59_mid{
-	background: url('../img/lr59_m.png');
+	background: url('../img/lbl/lr59_m.png');
 	top:0px;
 	height:25px;
 	line-height:25px;
 	color:white;
 }
 .namelbl_59_right{
-	background: url('../img/lr59_r.png');
+	background: url('../img/lbl/lr59_r.png');
 	top:0px;
 	height:25px;
 	width:31px;
@@ -79,20 +79,20 @@
 	opacity:0.8;
 }
 .namelbl_43_left{
-	background: url('../img/lr43_l.png');
+	background: url('../img/lbl/lr43_l.png');
 	top:0px;
 	height:24px;
 	width:22px;
 }
 .namelbl_43_mid{
-	background: url('../img/lr43_m.png');
+	background: url('../img/lbl/lr43_m.png');
 	top:4px;
 	height:20px;
 	line-height:20px;
 	color:brown;
 }
 .namelbl_43_right{
-	background: url('../img/lr43_r.png');
+	background: url('../img/lbl/lr43_r.png');
 	top:0px;
 	height:24px;
 	width:8px;
@@ -103,20 +103,20 @@
 	opacity:1;
 }
 .medal_717_left{
-	background: url('../img/m717_l.png');
+	background: url('../img/lbl/m717_l.png');
 	top:0px;
 	height: 38px;
 	width:38px;
 }
 .medal_717_mid{
-	background: url('../img/m717_m.png');
+	background: url('../img/lbl/m717_m.png');
 	top:12px;
 	height:25px;
 	line-height:25px;
 	color:white;
 }
 .medal_717_right{
-	background: url('../img/m717_r.png');
+	background: url('../img/lbl/m717_r.png');
 	top:2px;
 	height:36px;
 	width:37px;
@@ -127,20 +127,20 @@
 	opacity:1;
 }
 .medal_6_left{
-	background: url('../img/m6_l.png');
+	background: url('../img/lbl/m6_l.png');
 	top:0px;
 	height: 17px;
 	width:14px;
 }
 .medal_6_mid{
-	background: url('../img/m6_m.png');
+	background: url('../img/lbl/m6_m.png');
 	top:0px;
 	height:17px;
 	line-height:17px;
 	color:white;
 }
 .medal_6_right{
-	background: url('../img/m6_r.png');
+	background: url('../img/lbl/m6_r.png');
 	top:0px;
 	height:17px;
 	width:14px;
