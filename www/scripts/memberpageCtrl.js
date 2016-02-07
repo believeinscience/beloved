@@ -71,6 +71,9 @@ $scope.$on("$destroy", function(){
 					$scope.players[1].animation.startinter();
 					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],true)};
 					
+					for(var i=0;i<$scope.players.length-1;i++)
+						$('#player_'+$scope.players[i].ign).draggable();
+					
 					}
                 });
             });
