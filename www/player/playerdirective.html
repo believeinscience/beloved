@@ -1,0 +1,20 @@
+<style>
+#player_{{players[0].ign}}{
+	top:{{players[0].coord.y}}px;
+	left:{{players[0].coord.x}}px;
+}
+#avatar_{{players[0].ign}}{
+	background: transparent url('img/{{players[0].ign}}.png');
+	width:{{players[0].animationinfo.width}}px;
+	height:{{players[0].animationinfo.height}}px;
+}
+</style>
+<div id="player_{{players[0].ign}}" class="player">
+	<div id="avatar_{{players[0].ign}}" class="pl_avatar"></div>
+	<div class="namelbl_{{players[0].namelabel.type}} texttag">
+		<div class="namelbl_{{players[0].namelabel.type}}_left texttag_left"></div><div class="namelbl_{{players[0].namelabel.type}}_mid texttag_mid">{{players[0].namelabel.text}}</div><div class="namelbl_{{players[0].namelabel.type}}_right texttag_right"></div>
+	</div>
+	<div class="medal_{{players[0].medal.type}} texttag">
+		<div class="medal_{{players[0].medal.type}}_left texttag_left"></div><div class="medal_{{players[0].medal.type}}_mid texttag_mid">{{players[0].medal.text}}</div><div class="medal_{{players[0].medal.type}}_right texttag_right"></div>
+	</div>
+</div>

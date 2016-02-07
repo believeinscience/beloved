@@ -6,13 +6,141 @@
 	overflow: visible;
 }
 
-#memkankati{
-	background: transparent url('../img/avatar.png');
-	width:61px;
-	height:86px;
-	cursor:pointer;
+.player{
+	display: inline-block;
 	float:left;
 	position:relative;
-	top:450px;
-	left:400px;
+}
+.pl_avatar{
+	cursor:pointer;
+	margin:auto;
+	position:relative;
+	
+}
+/*texttag class needed for any kind of medal or name tag */
+.texttag{
+	display:block;
+	text-align:center;
+	margin:auto;
+	background: transparent;
+}
+.texttag_left{
+	display: inline-block;
+	position:relative;
+	background: transparent no-repeat;
+
+}
+.texttag_mid{
+	position:relative;
+	display: inline-block;
+	vertical-align:top;
+	text-align:center;
+	padding-left:2px;
+	padding-right:2px;
+	font-size:14px;
+	font-family: "Arial";
+	background: transparent repeat;
+
+
+}
+.texttag_right{
+	display: inline-block;
+	position:relative;
+	background: transparent no-repeat;
+}
+
+/*Ink and Wash*/
+.namelbl_59{
+	opacity:1;
+}
+.namelbl_59_left{
+	background: url('../img/lr59_l.png');
+	top:0px;
+	height:25px;
+	width:28px;
+}
+.namelbl_59_mid{
+	background: url('../img/lr59_m.png');
+	top:0px;
+	height:25px;
+	line-height:25px;
+	color:white;
+}
+.namelbl_59_right{
+	background: url('../img/lr59_r.png');
+	top:0px;
+	height:25px;
+	width:31px;
+}
+
+/*AppleRing*/
+.namelbl_43{
+	opacity:0.8;
+}
+.namelbl_43_left{
+	background: url('../img/lr43_l.png');
+	top:0px;
+	height:24px;
+	width:22px;
+}
+.namelbl_43_mid{
+	background: url('../img/lr43_m.png');
+	top:4px;
+	height:20px;
+	line-height:20px;
+	color:brown;
+}
+.namelbl_43_right{
+	background: url('../img/lr43_r.png');
+	top:0px;
+	height:24px;
+	width:8px;
+}
+
+/*Junk Food Medal*/
+.medal_717{
+	opacity:1;
+}
+.medal_717_left{
+	background: url('../img/m717_l.png');
+	top:0px;
+	height: 38px;
+	width:38px;
+}
+.medal_717_mid{
+	background: url('../img/m717_m.png');
+	top:12px;
+	height:25px;
+	line-height:25px;
+	color:white;
+}
+.medal_717_right{
+	background: url('../img/m717_r.png');
+	top:2px;
+	height:36px;
+	width:37px;
+}
+
+/*Maple Idol Medal*/
+.medal_6{
+	opacity:1;
+}
+.medal_6_left{
+	background: url('../img/m6_l.png');
+	top:0px;
+	height: 17px;
+	width:14px;
+}
+.medal_6_mid{
+	background: url('../img/m6_m.png');
+	top:0px;
+	height:17px;
+	line-height:17px;
+	color:white;
+}
+.medal_6_right{
+	background: url('../img/m6_r.png');
+	top:0px;
+	height:17px;
+	width:14px;
 }
