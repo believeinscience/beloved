@@ -10,7 +10,7 @@
 }
 </style>
 <div id="player_{{player.ign}}" class="player">
-	<div id="avatar_{{player.ign}}" class="pl_avatar" ng-mouseover="player.onclick()"></div>
+	<div id="avatar_{{player.ign}}" class="pl_avatar" ng-mouseover="player.onclick()" uib-popover="{{player.tooltip}}" popover-trigger="mouseenter"></div>
 	<div class="namelbl_{{player.namelabel.type}} texttag">
 		<div class="namelbl_{{player.namelabel.type}}_left texttag_left"></div><div class="namelbl_{{player.namelabel.type}}_mid texttag_mid">{{player.namelabel.text}}</div><div class="namelbl_{{player.namelabel.type}}_right texttag_right"></div>
 	</div>

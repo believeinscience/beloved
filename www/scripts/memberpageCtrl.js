@@ -5,18 +5,21 @@ $scope.players=[
 medal:{type:"717",text:"Supreme Leader"},
 namelabel:{type:"43",text:"Kankati"},
 coord:{x:400,y:350},
+tooltip:"Hiiii~",
 animationinfo:{frames:16,fps:16,states:7,width:61,height:86}
 },
 {ign:"whanderlust",
 medal:{type:"6",text:"Co-Founder"},
 namelabel:{type:"59",text:"whanderlust"},
 coord:{x:450,y:425},
+tooltip:"",
 animationinfo:{frames:16,fps:8,states:5,width:61,height:84}
 },
 {ign:"Archer",
 medal:{type:"0",text:""},
 namelabel:{type:"58",text:"Archer"},
 coord:{x:500,y:425},
+tooltip:"",
 animationinfo:{frames:16,fps:8,states:6,width:57,height:70}
 },
 //dirty hack since the $last item never seems to have its animation work.
@@ -25,6 +28,7 @@ animationinfo:{frames:16,fps:8,states:6,width:57,height:70}
 medal:{type:"0",text:""},
 namelabel:{type:"0",text:""},
 coord:{x:0,y:0},
+tooltip:"",
 animationinfo:{width:1,height:1}
 }];
 
@@ -45,7 +49,7 @@ $scope.$on("$destroy", function(){
 		scope:{
 		player: '=member'
 		},
-		templateUrl: 'directives/playerdirective.html'
+		templateUrl: 'templates/playerdirective.html'
 	};
 }).directive('postrepeatdirective', function() {
 	//http://stackoverflow.com/questions/12304291/angularjs-how-to-run-additional-code-after-angularjs-has-rendered-a-template/24228604#24228604
