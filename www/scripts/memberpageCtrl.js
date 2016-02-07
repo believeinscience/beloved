@@ -44,7 +44,7 @@ $scope.$on("$destroy", function(){
 		scope:{
 		player: '=member'
 		},
-		templateUrl: 'player/playerDirective.html'
+		templateUrl: 'directives/playerdirective.html'
 	};
 }).directive('postrepeatdirective', function() {
 	//http://stackoverflow.com/questions/12304291/angularjs-how-to-run-additional-code-after-angularjs-has-rendered-a-template/24228604#24228604

@@ -17,7 +17,7 @@ concat: {
   release: {
 	files:[
 		{src: ['www/library/underscore.deferred.js','www/library/underscore.math.js','www/library/miso.events.js','www/library/miso.ds.0.4.1.js','www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js','www/scripts/scammerController.js','www/scripts/spriteAniObj.js','www/scripts/memberpageCtrl.js'], dest: 'temp/scripts/scripts.js'},
-		{src:['www/css/style.css','www/css/member.css'], dest:'temp/css/styles.css'}
+		{src:['www/css/style.css','www/css/member.css'], dest:'build/css/style.css'}
 	]
   },
   test:{
@@ -27,7 +27,7 @@ concat: {
 		}
 	},
 	files:[
-		{src:['temp/pages/about.html','temp/pages/Countdown.html','temp/pages/home.html','temp/pages/ScammerReg.html','temp/pages/members.html'],dest:"temp/pages/concatted.html"}
+		{src:['temp/pages/about.html','temp/pages/Countdown.html','temp/pages/home.html','temp/pages/ScammerReg.html','temp/pages/members.html','temp/directives/playerdirective.html'],dest:"temp/pages/concatted.html"}
 	]
   }
 },
@@ -42,7 +42,8 @@ minifyHtml:{
 	},
 	pageminify:{
 			files:[
-			{expand: true,cwd: 'www/pages',src:['*'],dest:'temp/pages/'}
+			{expand: true,cwd: 'www/pages',src:['*'],dest:'temp/pages/'},
+			{expand: true,cwd: 'www/directives',src:['*'],dest:'temp/directives/'}
 		]
 	}
 },
@@ -51,7 +52,7 @@ cssmin:{
 	},
 	release:{
 		files:[
-			{src:"temp/css/styles.css",dest:"build/css/style.css"}
+			{src:"build/css/style.css",dest:"build/css/style.css"}
 		]
 		}
 },
@@ -78,8 +79,8 @@ copy: {
 			files: [
 				{ src: 'www/favicon.png', dest: 'build/favicon.png' },
 				{src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js', dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'},
-				{expand:true, cwd:'www/',src: 'img/**', dest: 'build/'},
-				{src: 'www/player/playerdirective.html', dest:'build/player/playerdirective.html'}
+				{expand:true, cwd:'www/',src: 'img/**', dest: 'build/'}//,
+				//{src: 'www/directives/playerdirective.html', dest:'build/directives/playerdirective.html'}
 			]
 		}
     },
@@ -117,5 +118,5 @@ grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks("grunt-image-embed");
 // Default task(s).
-grunt.registerTask('release', ['jshint:release','minifyHtml:pageminify','concat','includereplace','uglify','minifyHtml:mainindex','cssmin','copy','imageEmbed']);
+grunt.registerTask('release', ['jshint:release','minifyHtml:pageminify','concat','includereplace','uglify','minifyHtml:mainindex','copy','imageEmbed','cssmin']);
 };
