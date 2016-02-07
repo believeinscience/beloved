@@ -65,12 +65,12 @@ $scope.$on("$destroy", function(){
 					$scope.players[0].animation = new spriteAnima('#avatar_'+$scope.players[0].ign,$scope.players[0].animationinfo.fps,$scope.players[0].animationinfo.frames,$scope.players[0].animationinfo.states);
 					$scope.players[0].animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
 					$scope.players[0].animation.startinter();
-					$scope.players[0].onclick = function(){$scope.players[0].animation.doRandomExpression([{state:5,weight:1,length:3000},{state:6,weight:1,length:3000}],true)};
-					
+					$scope.players[0].onclick = function(){$scope.players[0].animation.doRandomExpression([{state:5,weight:1,length:3000},{state:6,weight:1,length:3000}],true);};
+
 					$scope.players[1].animation = new spriteAnima('#avatar_'+$scope.players[1].ign,$scope.players[1].animationinfo.fps,$scope.players[1].animationinfo.frames,$scope.players[1].animationinfo.states);
 					$scope.players[1].animation.setrandexpr([{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}]);
 					$scope.players[1].animation.startinter();
-					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],true)};
+					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],true);};
 					
 					for(var i=0;i<$scope.players.length-1;i++)
 						$('#player_'+$scope.players[i].ign).draggable();
@@ -80,4 +80,4 @@ $scope.$on("$destroy", function(){
             });
         },
     };
-})
+});

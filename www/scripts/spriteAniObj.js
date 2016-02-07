@@ -62,7 +62,7 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 		var indexchoice = 0;
 		//find the index with the corresponding weight
 		for(i=0;i<list.length;i++){
-			weightchoice = weightchoice - list[i].weight
+			weightchoice = weightchoice - list[i].weight;
 			if(weightchoice<=0){
 				indexchoice = i;
 				break;
@@ -78,7 +78,7 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	};
 	
 	var doRandomExpression = function(list,priority){
-		if(list.length==0)
+		if(list.length===0)
 			return;
 		var index = chooserandomweightedindex(list);
 		doExpression(list[index].state,list[index].length,priority);
