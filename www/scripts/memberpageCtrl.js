@@ -1,4 +1,5 @@
 app.controller("memberPageController",['$scope','$timeout',function($scope,$timeout){
+//ign is case sensitive, and the filename of their picture should also be the same case
 $scope.players=[
 {ign:"Kankati",
 medal:{type:"717",text:"Supreme Leader"},
@@ -12,7 +13,7 @@ namelabel:{type:"59",text:"whanderlust"},
 coord:{x:450,y:425},
 animationinfo:{frames:16,fps:8,states:5,width:61,height:84}
 },
-{ign:"archer",
+{ign:"Archer",
 medal:{type:"0",text:""},
 namelabel:{type:"58",text:"Archer"},
 coord:{x:500,y:425},
