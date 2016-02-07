@@ -1,5 +1,3 @@
-
- <div  id = "memberbg" ng-controller="memberPageController">
-	<div id="memkankati" ng-click="memkankaticlick()"></div>
-	<player></player>
+<div  id = "memberbg" ng-controller="memberPageController">
+	<guildmember ng-repeat="p in players" member="p"></guildmember>
 </div>

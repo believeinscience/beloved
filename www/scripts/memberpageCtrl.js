@@ -20,15 +20,19 @@ $timeout(function(){
 	$scope.players.animation = new spriteAnima('#avatar_'+$scope.players[0].ign,$scope.players[0].animationinfo.frames,$scope.players[0].animationinfo.fps,$scope.players[0].animationinfo.states);
 	$scope.players.animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
 	$scope.players.animation.startinter();
-},100);
+},2000);
 
 $scope.$on("$destroy", function(){
 	for(var i=0;i<$scope.players.length;i++)
 		$scope.players[i].animation.destroy();
 });
 
-}]).directive('player', function(){
+}]).directive('guildmember', function(){
 	return{
+		restrict:'E',
+		scope:{
+		player: '=member'
+		},
 		templateUrl: 'player/playerDirective.html'
 	};
 });
