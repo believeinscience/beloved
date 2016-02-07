@@ -2,6 +2,7 @@
 	background: center no-repeat url('../img/memberbg_cr.png');
 	height: 988px;
 	min-width: 1258px;
+	max-width: 1258px;
 	width: auto !important;
 	overflow: visible;
 }

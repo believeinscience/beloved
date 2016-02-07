@@ -8,16 +8,14 @@ $scope.players=[
 {ign:"Kankati",
 medal:{type:"717",text:"Supreme Leader"},
 namelabel:{type:"43",text:"Kankati"},
-coord:{x:300,y:300},
-animation:null,
+coord:{x:400,y:350},
 animationinfo:{frames:16,fps:16,states:7,width:61,height:86}
 },
 {ign:"whanderlust",
 medal:{type:"6",text:"Co-Founder"},
 namelabel:{type:"59",text:"whanderlust"},
-coord:{x:800,y:300},
-animation:null,
-animationinfo:{frames:16,fps:16,states:7,width:61,height:86}
+coord:{x:450,y:425},
+animationinfo:{frames:16,fps:8,states:5,width:61,height:84}
 },
 
 //dirty hack since the $last item never seems to have its animation work.
@@ -63,15 +61,15 @@ $scope.$on("$destroy", function(){
 					if($scope.$last){
 					console.log("starting animations");
 					//configure and start animations
-					$scope.players[0].animation = new spriteAnima('#avatar_'+$scope.players[0].ign,$scope.players[0].animationinfo.frames,$scope.players[0].animationinfo.fps,$scope.players[0].animationinfo.states);
+					$scope.players[0].animation = new spriteAnima('#avatar_'+$scope.players[0].ign,$scope.players[0].animationinfo.fps,$scope.players[0].animationinfo.frames,$scope.players[0].animationinfo.states);
 					$scope.players[0].animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
 					$scope.players[0].animation.startinter();
 					$scope.players[0].onclick = function(){$scope.players[0].animation.doRandomExpression([{state:5,weight:1,length:3000},{state:6,weight:1,length:3000}],true)};
 					
-					$scope.players[1].animation = new spriteAnima('#avatar_'+$scope.players[1].ign,$scope.players[1].animationinfo.frames,$scope.players[1].animationinfo.fps,$scope.players[1].animationinfo.states);
-					$scope.players[1].animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
+					$scope.players[1].animation = new spriteAnima('#avatar_'+$scope.players[1].ign,$scope.players[1].animationinfo.fps,$scope.players[1].animationinfo.frames,$scope.players[1].animationinfo.states);
+					$scope.players[1].animation.setrandexpr([{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}]);
 					$scope.players[1].animation.startinter();
-					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:7,weight:1,length:3000}],true)};
+					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],true)};
 					
 					}
                 });
