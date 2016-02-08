@@ -6,21 +6,36 @@ medal:{type:"648",text:"Supreme Leader"},
 namelabel:{type:"43",text:"Kankati"},
 coord:{x:400,y:350},
 tooltip:"Hiiii~",
-animationinfo:{frames:16,fps:16,states:7,width:61,height:86}
+animationinfo:{frames:16,fps:16,states:7,width:61,height:86},
+randexpressions:[{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}],
+randexpressionsonclick:[{state:5,weight:1,length:3000},{state:6,weight:1,length:3000},{state:7,weight:1,length:3000}],
 },
 {ign:"whanderlust",
 medal:{type:"6",text:"Co-Founder"},
 namelabel:{type:"59",text:"whanderlust"},
 coord:{x:450,y:425},
 tooltip:"",
-animationinfo:{frames:16,fps:8,states:5,width:61,height:84}
+animationinfo:{frames:16,fps:8,states:5,width:61,height:84},
+randexpressions:[{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}],
+randexpressionsonclick:[{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],
 },
 {ign:"Archer",
 medal:{type:"603",text:"Junior"},
 namelabel:{type:"58",text:"Archer"},
 coord:{x:500,y:425},
 tooltip:"",
-animationinfo:{frames:16,fps:8,states:6,width:57,height:70}
+animationinfo:{frames:16,fps:8,states:6,width:57,height:70},
+randexpressions:[{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}],
+randexpressionsonclick:[{state:4,weight:1,length:3000},{state:5,weight:1,length:3000},{state:6,weight:1,length:3000}],
+},
+{ign:"AlphaStigma",
+medal:{type:"603",text:"Junior"},
+namelabel:{type:"58",text:"AlphaStigma"},
+coord:{x:417,y:605},
+tooltip:"Stop Poking Me qq",
+animationinfo:{frames:6,fps:16,states:5,width:70,height:82},
+randexpressions:[{state:2,weight:2,length:375},{state:3,weight:2,length:375},{state:6,weight:1,length:3000}],
+randexpressionsonclick:[{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],
 },
 //dirty hack since the $last item never seems to have its animation work.
 //always last
@@ -69,22 +84,18 @@ $scope.$on("$destroy", function(){
 					//configure and start animations
 					
 					//iniate animation object
-					for (var i=0;i<$scope.players.length-1;i++)
-						$scope.players[i].animation = new spriteAnima('#avatar_'+$scope.players[i].ign,$scope.players[i].animationinfo.fps,$scope.players[i].animationinfo.frames,$scope.players[i].animationinfo.states);
-					
 					//set the expressions to do
-					$scope.players[0].animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
-					$scope.players[0].onclick = function(){$scope.players[0].animation.doRandomExpression([{state:5,weight:1,length:3000},{state:6,weight:1,length:3000},{state:7,weight:1,length:3000}],true);};
-
-					$scope.players[1].animation.setrandexpr([{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}]);
-					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],true);};
-					
-					$scope.players[2].animation.setrandexpr([{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}]);
-					$scope.players[2].onclick = function(){$scope.players[2].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000},{state:6,weight:1,length:3000}],true);};
-					
-					//initialize intervals for random expressions and make them draggable.
-					for(i=0;i<$scope.players.length-1;i++){
-						$scope.players[2].animation.startinter();
+					for (var i=0;i<$scope.players.length-1;i++){
+						$scope.players[i].animation = new spriteAnima('#avatar_'+$scope.players[i].ign,$scope.players[i].animationinfo.fps,$scope.players[i].animationinfo.frames,$scope.players[i].animationinfo.states);
+						$scope.players[i].animation.setrandexpr($scope.players[i].randexpressions);
+						$scope.players[i].onclick = (function(){
+							var instance={};
+							instance.x=i;
+							instance.temp=$scope.players[instance.x].randexpressionsonclick;
+							return function(){$scope.players[instance.x].animation.doRandomExpression(instance.temp,true);};
+						})();
+						//initialize intervals for random expressions and make them draggable.
+						$scope.players[i].animation.startinter();
 						$('#player_'+$scope.players[i].ign).draggable();
 					}
 					
