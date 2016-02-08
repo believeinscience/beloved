@@ -104,6 +104,7 @@ $scope.$on("$destroy", function(){
 					for (var i=0;i<$scope.players.length-1;i++){
 						$scope.players[i].animation = new spriteAnima('#avatar_'+$scope.players[i].ign,$scope.players[i].animationinfo.fps,$scope.players[i].animationinfo.frames,$scope.players[i].animationinfo.states);
 						$scope.players[i].animation.setrandexpr($scope.players[i].randexpressions);
+						$scope.players[i].animation.setstartrandomly(true);
 						$scope.players[i].onclick = clickhandler(i);
 						//initialize intervals for random expressions and make them draggable.
 						$scope.players[i].animation.startinter();

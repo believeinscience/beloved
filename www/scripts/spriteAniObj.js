@@ -15,7 +15,8 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	//interval parameters
 	var timebetween = 5000;
 	var spriteinterval = null;
-	
+	//if startrandomly, timeinterval will start between 0 and timebetween (good for spreading out a bunch of actions).
+	var startrandomly = false;
 	//random interval expressions
 	//all expressions are objects with the properties with state,weight,length to ensure flexibility
 	var randintervalexpressions = [];
@@ -87,11 +88,16 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 	this.startinter = function(){
 		if(spriteinterval!==null)
 			return;
+		var starttimeout = 0;
+		if(startrandomly)
+			starttimeout = timebetween*Math.random();
+		setTimeout(function(){
 		spriteinterval = setInterval(function(){
 		if(activeExpression)
 			return;
 		doRandomExpression(randintervalexpressions,false);
 		},timebetween);
+		},starttimeout);
 	};
 
 	this.stopinter = function(){
@@ -125,4 +131,7 @@ var spriteAnima = function(domid,inputfps,inputframes,numstates){
 		randintervalexpressions = input;
 	};
 	
+	this.setstartrandomly = function(input){
+		startrandomly = input;
+	};
 };
