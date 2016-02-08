@@ -27,7 +27,7 @@ concat: {
 		}
 	},
 	files:[
-		{src:['temp/pages/about.html','temp/pages/Countdown.html','temp/pages/home.html','temp/pages/ScammerReg.html','temp/pages/members.html','temp/directives/playerdirective.html'],dest:"temp/pages/concatted.html"}
+		{src:['temp/pages/about.html','temp/pages/Countdown.html','temp/pages/home.html','temp/pages/ScammerReg.html','temp/pages/members.html','temp/templates/playerdirective.html'],dest:"temp/pages/concatted.html"}
 	]
   }
 },
@@ -43,7 +43,7 @@ minifyHtml:{
 	pageminify:{
 			files:[
 			{expand: true,cwd: 'www/pages',src:['*'],dest:'temp/pages/'},
-			{expand: true,cwd: 'www/directives',src:['*'],dest:'temp/directives/'}
+			{expand: true,cwd: 'www/templates',src:['*'],dest:'temp/templates/'}
 		]
 	}
 },
