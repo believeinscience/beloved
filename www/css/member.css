@@ -172,6 +172,30 @@
 	width:34px;
 }
 
+/*Cake medal*/
+.medal_140{
+	opacity:1;
+}
+.medal_140_left{
+	background: url('../img/lbl/m140_l.png');
+	top:0px;
+	height: 26px;
+	width:42px;
+}
+.medal_140_mid{
+	background: url('../img/lbl/m140_m.png');
+	top:1px;
+	height:25px;
+	line-height:27px;
+	color:white;
+}
+.medal_140_right{
+	background: url('../img/lbl/m140_r.png');
+	top:0px;
+	height:26px;
+	width:42px;
+}
+
 /*Book and pencil - Algebraic?*/
 .medal_603{
 	opacity:1;
