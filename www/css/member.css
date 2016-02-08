@@ -172,6 +172,54 @@
 	width:34px;
 }
 
+/*696 purple "555"*/
+.medal_696{
+	opacity:1;
+}
+.medal_696_left{
+	background: url('../img/lbl/m696_l.png');
+	top:0px;
+	height: 18px;
+	width:26px;
+}
+.medal_696_mid{
+	background: url('../img/lbl/m696_m.png');
+	top:1px;
+	height:17px;
+	line-height:17px;
+	color:white;
+}
+.medal_696_right{
+	background: url('../img/lbl/m696_r.png');
+	top:1px;
+	height:17px;
+	width:7px;
+}
+
+/*485 purple*/
+.medal_485{
+	opacity:1;
+}
+.medal_485_left{
+	background: url('../img/lbl/m485_l.png');
+	top:2px;
+	height: 17px;
+	width:20px;
+}
+.medal_485_mid{
+	background: url('../img/lbl/m485_m.png');
+	top:2px;
+	height:17px;
+	line-height:17px;
+	color:white;
+}
+.medal_485_right{
+	background: url('../img/lbl/m485_r.png');
+	top:2px;
+	height:17px;
+	width:16px;
+}
+
 /*Cake medal*/
 .medal_140{
 	opacity:1;
