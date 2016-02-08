@@ -83,17 +83,19 @@ $scope.$on("$destroy", function(){
 					//console.log("starting animations");
 					//configure and start animations
 					
+					//jshint: move function out of loop
+					var clickhandler = function (input){
+							var instance={};
+							instance.x=i;
+							instance.temp=$scope.players[instance.x].randexpressionsonclick;
+							return function(){$scope.players[instance.x].animation.doRandomExpression(instance.temp,true);};
+					};
 					//iniate animation object
 					//set the expressions to do
 					for (var i=0;i<$scope.players.length-1;i++){
 						$scope.players[i].animation = new spriteAnima('#avatar_'+$scope.players[i].ign,$scope.players[i].animationinfo.fps,$scope.players[i].animationinfo.frames,$scope.players[i].animationinfo.states);
 						$scope.players[i].animation.setrandexpr($scope.players[i].randexpressions);
-						$scope.players[i].onclick = (function(){
-							var instance={};
-							instance.x=i;
-							instance.temp=$scope.players[instance.x].randexpressionsonclick;
-							return function(){$scope.players[instance.x].animation.doRandomExpression(instance.temp,true);};
-						})();
+						$scope.players[i].onclick = clickhandler(i);
 						//initialize intervals for random expressions and make them draggable.
 						$scope.players[i].animation.startinter();
 						$('#player_'+$scope.players[i].ign).draggable();
