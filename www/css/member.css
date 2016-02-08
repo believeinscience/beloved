@@ -10,7 +10,7 @@
 .player{
 	display: inline-block;
 	float:left;
-	position:relative;
+	position:absolute;
 }
 .pl_avatar{
 	cursor:pointer;
@@ -73,6 +73,30 @@
 	background: url('../img/lbl/lr59_r.png');
 	top:0px;
 	height:25px;
+	width:31px;
+}
+
+/*Rose Label Ring*/
+.namelbl_40{
+	opacity:1;
+}
+.namelbl_40_left{
+	background: url('../img/lbl/lr40_l.png');
+	top:0px;
+	height:32px;
+	width:27px;
+}
+.namelbl_40_mid{
+	background: url('../img/lbl/lr40_m.png');
+	top:9px;
+	height:19px;
+	line-height:19px;
+	color:white;
+}
+.namelbl_40_right{
+	background: url('../img/lbl/lr40_r.png');
+	top:2px;
+	height:32px;
 	width:31px;
 }
 
