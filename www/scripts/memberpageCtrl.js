@@ -67,23 +67,26 @@ $scope.$on("$destroy", function(){
 					if($scope.$last){
 					//console.log("starting animations");
 					//configure and start animations
-					$scope.players[0].animation = new spriteAnima('#avatar_'+$scope.players[0].ign,$scope.players[0].animationinfo.fps,$scope.players[0].animationinfo.frames,$scope.players[0].animationinfo.states);
+					
+					//iniate animation object
+					for (var i=0;i<$scope.players.length-1;i++)
+						$scope.players[i].animation = new spriteAnima('#avatar_'+$scope.players[i].ign,$scope.players[i].animationinfo.fps,$scope.players[i].animationinfo.frames,$scope.players[i].animationinfo.states);
+					
+					//set the expressions to do
 					$scope.players[0].animation.setrandexpr([{state:2,weight:1,length:1000},{state:3,weight:1,length:1000}]);
-					$scope.players[0].animation.startinter();
 					$scope.players[0].onclick = function(){$scope.players[0].animation.doRandomExpression([{state:5,weight:1,length:3000},{state:6,weight:1,length:3000},{state:7,weight:1,length:3000}],true);};
 
-					$scope.players[1].animation = new spriteAnima('#avatar_'+$scope.players[1].ign,$scope.players[1].animationinfo.fps,$scope.players[1].animationinfo.frames,$scope.players[1].animationinfo.states);
 					$scope.players[1].animation.setrandexpr([{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}]);
-					$scope.players[1].animation.startinter();
 					$scope.players[1].onclick = function(){$scope.players[1].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000}],true);};
 					
-					$scope.players[2].animation = new spriteAnima('#avatar_'+$scope.players[2].ign,$scope.players[2].animationinfo.fps,$scope.players[2].animationinfo.frames,$scope.players[1].animationinfo.states);
 					$scope.players[2].animation.setrandexpr([{state:2,weight:1,length:2000},{state:3,weight:1,length:2000}]);
-					$scope.players[2].animation.startinter();
 					$scope.players[2].onclick = function(){$scope.players[2].animation.doRandomExpression([{state:4,weight:1,length:3000},{state:5,weight:1,length:3000},{state:6,weight:1,length:3000}],true);};
 					
-					for(var i=0;i<$scope.players.length-1;i++)
+					//initialize intervals for random expressions and make them draggable.
+					for(i=0;i<$scope.players.length-1;i++){
+						$scope.players[2].animation.startinter();
 						$('#player_'+$scope.players[i].ign).draggable();
+					}
 					
 					}
                 });
