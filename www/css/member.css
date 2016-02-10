@@ -10,7 +10,7 @@
 .player{
 	display: inline-block;
 	float:left;
-	position:absolute;
+	position:relative;
 }
 .pl_avatar{
 	cursor:pointer;
@@ -242,6 +242,30 @@
 	top:2px;
 	height:17px;
 	width:16px;
+}
+
+/*Irena Medal*/
+.medal_554{
+	opacity:1;
+}
+.medal_554_left{
+	background: url('../img/lbl/m554_l.png');
+	top:0px;
+	height: 17px;
+	width:28px;
+}
+.medal_554_mid{
+	background: url('../img/lbl/m554_m.png');
+	top:0px;
+	height:17px;
+	line-height:14px;
+	color:black;
+}
+.medal_554_right{
+	background: url('../img/lbl/m554_r.png');
+	top:0px;
+	height:17px;
+	width:28px;
 }
 
 /*Cake medal*/
