@@ -1,16 +1,5 @@
-<style>
-#player_{{player.ign}}{
-	top:{{player.coord.y}}px;
-	left:{{player.coord.x}}px;
-}
-#avatar_{{player.ign}}{
-	background: transparent url('img/{{player.ign}}.png');
-	width:{{player.animationinfo.width}}px;
-	height:{{player.animationinfo.height}}px;
-}
-</style>
-<div id="player_{{player.ign}}" class="player">
-	<div id="avatar_{{player.ign}}" class="pl_avatar" ng-mouseover="player.onclick()" uib-popover="{{player.tooltip}}" popover-trigger="mouseenter"></div>
+<div id="player_{{player.ign}}" class="player" ng-style="{top:'{{player.coord.y}}px',left:'{{player.coord.x}}px'}">
+	<div id="avatar_{{player.ign}}" class="pl_avatar" ng-mouseover="player.onclick()" uib-popover="{{player.tooltip}}" popover-trigger="mouseenter" ng-style="{background: 'url(img/{{player.ign}}.png)',width:'{{player.animationinfo.width}}px',height:'{{player.animationinfo.height}}px'}"></div>
 	<div class="namelbl_{{player.namelabel.type}} texttag">
 		<div class="namelbl_{{player.namelabel.type}}_left texttag_left"></div><div class="namelbl_{{player.namelabel.type}}_mid texttag_mid">{{player.namelabel.text}}</div><div class="namelbl_{{player.namelabel.type}}_right texttag_right"></div>
 	</div>
