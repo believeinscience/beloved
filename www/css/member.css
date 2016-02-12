@@ -172,6 +172,30 @@
 	width:37px;
 }
 
+/*SAO Medal*/
+.medal_499{
+	opacity:1;
+}
+.medal_499_left{
+	background: url('../img/lbl/m499_l.png');
+	top:0px;
+	height: 33px;
+	width:41px;
+}
+.medal_499_mid{
+	background: url('../img/lbl/m499_m.png');
+	top:4px;
+	height:28px;
+	line-height:28px;
+	color:white;
+}
+.medal_499_right{
+	background: url('../img/lbl/m499_r.png');
+	top:0px;
+	height:33px;
+	width:34px;
+}
+
 /*Spirit of Sengoku*/
 .medal_648{
 	opacity:1;
