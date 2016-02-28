@@ -23,8 +23,9 @@ app.config(["$routeProvider",function($routeProvider){
 
 }]);
 
-app.controller('cfgController',["$rootScope",function($rootScope){
+app.controller('cfgController',["$rootScope","$window","$location",function($rootScope,$window,$location){
 	$rootScope.$on('$routeChangeSuccess', function(){
+		$window.ga('send', 'pageview', { page: $location.url() });
         spriteAnimation.randomHappyface();
       });
 

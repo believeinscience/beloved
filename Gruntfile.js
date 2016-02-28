@@ -16,7 +16,7 @@ uglify: {
 concat: {
   release: {
 	files:[
-		{src: ['www/library/underscore.deferred.js','www/library/underscore.math.js','www/library/miso.events.js','www/library/miso.ds.0.4.1.js','www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js','www/scripts/scammerController.js','www/scripts/spriteAniObj.js','www/scripts/memberpageCtrl.js'], dest: 'temp/scripts/scripts.js'},
+		{src: ['www/scripts/googleanalytics.js','www/library/underscore.deferred.js','www/library/underscore.math.js','www/library/miso.events.js','www/library/miso.ds.0.4.1.js','www/scripts/spriteAnimation.js','www/scripts/countdowns.js','www/scripts/pagemanager.js','www/scripts/CountdownCtrl.js','www/scripts/scammerController.js','www/scripts/spriteAniObj.js','www/scripts/memberpageCtrl.js'], dest: 'temp/scripts/scripts.js'},
 		{src:['www/css/style.css','www/css/member.css'], dest:'build/css/style.css'}
 	]
   },
@@ -88,7 +88,8 @@ jshint:{
 	options:{
 		globals:{
 			jQuery: true
-		}
+		},
+		ignores:['www/scripts/googleanalytics.js']
 	},
 	release:{
 		files:{
