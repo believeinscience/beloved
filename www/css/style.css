@@ -1,5 +1,5 @@
 .navbar{
-	padding-left:130px;
+	/*padding-left:130px;*/
 }
 
 #CharacterAvatar{
@@ -11,4 +11,12 @@
 	left:15px;
 	float:left;
 	position:absolute;
+}
+
+.whiteglyph{
+	color: white;
+}
+
+.navglyphs{
+	float:right;
 }
