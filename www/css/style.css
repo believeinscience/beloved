@@ -26,9 +26,13 @@ body{
 }
 
 .regular-page{
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.7);
 	border-radius: 25px;
-	border: 2px solid rgba(15,15,15,0.9);
+	border: 2px solid rgba(15,15,15,0.7);
 	color:white;
 	min-height: 400px;
+}
+
+.regular-page a{
+	color:#CEF6F5;
 }
