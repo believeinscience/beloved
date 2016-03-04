@@ -43,14 +43,10 @@ module.exports = function(grunt) {
 		      }
 	      },
 	      files: [
-		      {src: [
-            'temp/pages/about.html',
-            'temp/pages/Countdown.html',
-            'temp/pages/home.html',
-            'temp/pages/ScammerReg.html',
-            'temp/pages/members.html',
-            'temp/templates/playerdirective.html'
-          ],dest:"temp/pages/concatted.html"}
+		      {src:[
+			  "temp/pages/*.html",
+			  "temp/templates/*.html"
+			  ],dest:"temp/pages/concatted.html"}
 	      ]
       }
     },
@@ -101,11 +97,7 @@ module.exports = function(grunt) {
 	    release: {
 			  files: [
 				  {src: 'www/favicon.png', dest: 'build/favicon.png'},
-				  {src: 'www/ScammerRegistry/library/miso.ds.0.4.1.min.js',
-            dest: 'build/ScammerRegistry/library/miso.ds.0.4.1.min.js'},
-				  {expand:true, cwd:'www/',src: 'img/**', dest: 'build/'}//,
-				  //{src: 'www/directives/playerdirective.html',
-          //  dest:'build/directives/playerdirective.html'}
+				  {expand:true, cwd:'www/',src: 'img/**', dest: 'build/'}
 			  ]
 		  }
     },
