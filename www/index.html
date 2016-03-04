@@ -15,25 +15,26 @@
 <body ng-app="single-page-app">
 
   <div ng-controller="cfgController">
-  <div>
-  <nav class="navbar navbar-inverse col-md-12" role="navigation">
-	<div class="col-md-8 col-md-offset-2">
-		<ul class="nav navbar-nav">
-			<li><a href="#/">Home<span class="sr-only">(current)</span></a></li>
-			<li><a href="#/about">About us</a></li>
-			<li><a href="#/ScammerReg">Scammer Registry</a></li>
-			<li><a href="#/Countdown">Daily Events</a></li>
-			<li><a href="#/members">Guild Members</a></li>
-		</ul>
-		<ul class="nav navbar-nav navglyphs">
+    <div>
+      <nav class="navbar col-md-12" role="navigation">
+	    <div class="col-md-8 col-md-offset-2">
+        <img class="emblem" src="img/emblem.png">
+		    <ul class="nav navbar-nav">
+			    <li><a href="#/">Home<span class="sr-only">(current)</span></a></li>
+			    <li><a href="#/about">About</a></li>
+			    <li><a href="#/resources">Resources</a></li>
+			    <li><a href="#/members">Members</a></li>
+          <li><a href="https://docs.google.com/forms/d/1cSgqVgA6c-GyeqOSKcMvAaltMBi71aKVSD4Gs_Zz_ow/viewform" target="_blank">Contact</a></li>
+		    </ul>
+		<!--ul class="nav navbar-nav navglyphs">
 			<li><a href="https://docs.google.com/forms/d/1cSgqVgA6c-GyeqOSKcMvAaltMBi71aKVSD4Gs_Zz_ow/viewform" target="_blank"><span class="glyphicon glyphicon-envelope whiteglyph" aria-hidden="true" tooltip-placement="bottom" uib-tooltip="Contact us!"></span></a></li>
-		</ul>
+		</ul-->
 		
-	</div>
-</nav>
-</div>
+	    </div>
+      </nav>
+    </div>
 
-  <div ng-view class="container col-md-12"></div>
+    <div ng-view class="container col-md-12"></div>
   </div>
   <!-- Character animation that floats at the bottom of the page -->
   <div class="hidden-xs hidden-sm" id="CharacterAvatar" onclick="spriteAnimation.randomSadface()"></div>

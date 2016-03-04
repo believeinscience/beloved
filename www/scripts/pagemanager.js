@@ -10,6 +10,9 @@ app.config(["$routeProvider",function($routeProvider){
           .when('/about',{
                 templateUrl: 'pages/about.html'
           })
+		  .when('/resources',{
+                templateUrl: 'pages/resources.html'
+          })
 		  .when('/ScammerReg',{
                 templateUrl: 'pages/ScammerReg.html'
           })
