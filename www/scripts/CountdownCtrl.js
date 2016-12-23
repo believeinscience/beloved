@@ -1,6 +1,6 @@
 app.controller('CountdownCtrl',["$scope","$interval","$timeout",function($scope, $interval, $timeout){
 //Ingame Events. Times in UTC
-$scope.igevents = [{Name:"Flag Race",Hour:"20",Minute:"0"},{Name:"Short Flag Race",Hour:"3",Minute:"0"},{Name:"Flag Race",Hour:"5",Minute:"0"},{Name:"Flag Race",Hour:"6",Minute:"0"},{Name:"Flag Race",Hour:"7",Minute:"0"},{Name:"Daily Server Reset",Hour:"8",Minute:"0"}];
+$scope.igevents = [{Name:"Flag Race",Hour:"12",Minute:"0"},{Name:"Short Flag Race",Hour:"19",Minute:"0"},{Name:"Flag Race",Hour:"21",Minute:"0"},{Name:"Flag Race",Hour:"22",Minute:"0"},{Name:"Flag Race",Hour:"23",Minute:"0"},{Name:"Daily Server Reset",Hour:"0",Minute:"0"}];
 
 
 var cdinter;
